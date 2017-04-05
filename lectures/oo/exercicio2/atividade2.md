@@ -13,6 +13,7 @@ Prazo para entrega: ~~4/4/2017~~ 10/04/2017, 23:59:59.
 
 **Questão 1:** Os termos abaixo estão relacionados ao paradigma de *Orientação por Objetos*. Defina cada um dos termos com base no livro-texto (Eck, David J. Introduction to Programming Using Java, 6th ed. 2011).
 * classe
+	TESTE
 * objeto
 * elementos de classe
 * atributos
@@ -21,6 +22,7 @@ Prazo para entrega: ~~4/4/2017~~ 10/04/2017, 23:59:59.
 * método construtor alternativo
 * estado de um objeto
 * retenção de estado
+
 
 
 **Questão 2:** Julgue as seguintes frases como verdadeiras ou falsas e explique o motivo delas estarem certas ou erradas. Nos casos em que julgar uma sentença como errada, altere-a de modo a corrigi-la.
