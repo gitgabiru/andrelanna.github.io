@@ -12,16 +12,41 @@ Atividade para realizar em dupla e entregar via GitHub. Uma entrega por dupla.
 Prazo para entrega: ~~4/4/2017~~ 10/04/2017, 23:59:59.
 
 **Questão 1:** Os termos abaixo estão relacionados ao paradigma de *Orientação por Objetos*. Defina cada um dos termos com base no livro-texto (Eck, David J. Introduction to Programming Using Java, 6th ed. 2011).
-* classe
-	TESTE...
-* objeto
-* elementos de classe
-* atributos
-* métodos
-* método construtor padrão
-* método construtor alternativo
-* estado de um objeto
-* retenção de estado
+* classe:
+	
+Classe é uma estrutura criada pelo programador contendo características e comportamentos comuns a um objeto. Em outras palavras, é um molde, do qual passará a ser criados objetos que seguirão o padrão definido na classe. Classes descrevem objetos.
+
+* objeto:
+
+É uma coleção de variáveis e métodos. É a instância de uma classe. Objetos podem ser criados e destruídos no decorrer da execução do programa.
+
+* elementos de classe:
+
+Existe dois elementos em classe, Estado e Comportamento. Estado refere-se aos atributos, características da classe e o comportamento está ligado ás ações que essa classe faz.
+
+* atributos:
+
+Atributos são características de uma classe. São as variáveis de que caracterizam o objeto instanciado.
+
+* métodos:
+
+Métodos são subrotinas que caracterizam os comportamentos do objeto.
+
+* método construtor padrão:
+
+É o método que cria os objetos. Ele é responsável pela alocação de memória e pela inicialização dos atributos de instância, que vão ser iniciados com valores nulos.
+
+* método construtor alternativo:
+
+Possui a mesma função do Método construtor padrão, porém ele instancia um objeto de maneira diferente, o construtor alternativo cria um objeto passando parâmetros, ou seja, dando valor aos seus atributos.
+
+* estado de um objeto:
+
+Os atributos de instância é o estado de um objeto, ou seja, os valores atribuídos aos atributos do objeto representam seu estado.
+
+* retenção de estado:
+
+A retenção de estado permite que o estado (valores dos atributos) do objeto possa ficar intacto, até que seja solicitado alguma alteração em algum dos valores dos atributos do objeto.
 
 
 
