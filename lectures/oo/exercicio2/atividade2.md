@@ -11,6 +11,10 @@ layout: default
 Atividade para realizar em dupla e entregar via GitHub. Uma entrega por dupla.
 Prazo para entrega: ~~4/4/2017~~ 10/04/2017, 23:59:59.
 
+Nome da Dupla:
+Gabriel Alves Soares de Souza - 15/0009917
+Iago Neres Oliveira           - 15/0011831
+
 **Questão 1:** Os termos abaixo estão relacionados ao paradigma de *Orientação por Objetos*. Defina cada um dos termos com base no livro-texto (Eck, David J. Introduction to Programming Using Java, 6th ed. 2011).
 * classe:
 	
@@ -52,15 +56,26 @@ A retenção de estado permite que o estado (valores dos atributos) do objeto po
 
 **Questão 2:** Julgue as seguintes frases como verdadeiras ou falsas e explique o motivo delas estarem certas ou erradas. Nos casos em que julgar uma sentença como errada, altere-a de modo a corrigi-la.
 
-a) Dois objetos instanciados através do método construtor padrão terão o mesmo estado e, portanto, suas referências serão iguais. 
+a) Dois objetos instanciados através do método construtor padrão terão o mesmo estado e, portanto, suas referências serão iguais.
+
+Falso. Dois objetos instanciados através do método construtor padrão terão o mesmo estado, porém, suas referências não serão iguais. Apesar de serem do mesmo construtor, os objetos referenciam diferentes endereços de memória do computador.
 
 b) Uma classe pode ter apenas um método construtor alternativo para instanciação de seus objetos. 
 
+Falso. Uma classe pode possuir mais de um método construtor alternativo, podendo variar, por exemplo, a quantidade de parâmetros que se passa no método.
+
 c) Retenção de estados é uma propriedade do paradigma OO que permite aos objetos manterem os valores de seus atributos até o momento em que um estímulo externo ao objeto solicite uma alteração no valor de algum atributo.
+
+Verdadeiro. A retenção de estado permite que o estado (valores dos atributos) do objeto possa ficar intacto, até que seja solicitado alguma alteração em algum dos valores.
 
 d) Em Java, o operador . (ponto) serve para acessar somente os métodos de um objeto. 
 
+Falso. Em java, o operador . (ponto) serve tanto para acessar atributos quanto para acessar métodos de um objeto.
+
 e) Métodos destrutores são aqueles métodos que são chamados explicitamente pelo algoritmo para destruir objetos e liberar os espaços que eles ocupam em memória. Em Java métodos destrutores são implementos com o nome **finalize()** e definidos em cada classe.
+
+Falso. Em java, não existe o método destrutor. Há o garbage collector que, de tempos em tempos, automaticamente, verifica se todos os objetos na memória estão sendo referenciados, se não possuem referências, os objetos são destruídos e a memória, que era ocupada por esses objetos sem referências, é liberada. O método finalize() especifica o que deve ser feito momentos antes do espaço do objeto ser retomado pelo garbage collector.
+
 
 
 **Questão 3:**  Considere o seguinte cenário:
