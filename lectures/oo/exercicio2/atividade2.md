@@ -372,6 +372,251 @@ public class Principal {
 
 Desse modo, pede-se nessa questão que seja modelada e implementada em Java a classe que representa as características e o comportamento de um controle remoto, de modo que o drone possa ser comandado a partir do comandos enviados pelo controle remoto.
 
+Drone.java
+{% highlight java %}
+package questao5;
+
+public class Drone {
+	
+	String marca;
+	String modelo;
+	int numeroHelices;
+	String camera;
+	int velocidadeVertical;
+	int velocidadeHorizontal;
+	int autonomiaBateria;
+	int distanciaMaxima;
+	
+	Drone() {
+		
+	}
+	
+	Drone(String marca, String modelo, int numeroHelices, String camera, int velocidadeVertical, int velocidadeHorizontal,
+	      int autonomiaBateria, int distanciaMaxima) {
+		
+		this.marca = marca;
+		this.modelo = modelo;
+		this.numeroHelices = numeroHelices;
+		this.camera = camera;
+		this.velocidadeVertical = velocidadeVertical;
+		this.velocidadeHorizontal = velocidadeHorizontal;
+		this.autonomiaBateria = autonomiaBateria;
+		this.distanciaMaxima = distanciaMaxima;
+		
+	}
+	
+	void imprime(){
+		
+		System.out.println("Marca: " + marca);
+		System.out.println("Modelo: " + modelo);
+		System.out.println("Numero de helices: " + numeroHelices);
+		System.out.println("Camera: " + camera);
+		System.out.println("Velocidade vertical maxima: " + velocidadeVertical + " m/s");
+		System.out.println("Velocidade Horizontal maxima: " + velocidadeHorizontal + " m/s");
+		System.out.println("Autonomia bateria: " + autonomiaBateria + " minutos");
+		System.out.println("Distancia maxima: " + distanciaMaxima + " metros\n");
+		
+	}
+	
+	int aumentaVelocidadeVertical() {
+		
+		velocidadeVertical += 1;
+		return velocidadeVertical;
+	
+	}
+	
+	int diminuiVelocidadeVertical() {
+		
+		velocidadeVertical -= 1;
+		return velocidadeVertical;
+	
+	}
+	
+	int aumentaVelocidadeHorizontal() {
+		
+		velocidadeHorizontal += 1;
+		return velocidadeHorizontal;
+		
+	}
+	
+	int diminuiVelocidadeHorizontal() {
+		
+		velocidadeHorizontal -= 1;
+		return velocidadeHorizontal;
+		
+	}
+	
+	int economiaBateriaVertical(int bateria) {
+		
+		velocidadeVertical = velocidadeVertical / 2;
+		return velocidadeVertical;
+		
+	}
+	
+	int economiaBateriaHorizontal(int bateria) {
+		
+		velocidadeHorizontal = velocidadeHorizontal / 2;
+		return velocidadeHorizontal;
+		
+	}
+	
+	void iniciarGravacao() {
+		
+		System.out.println("Gravando\n");
+		
+	}
+	
+	void interromperGravacao(){
+		
+		System.out.println("Gravação interrompida\n");
+		
+	}
+	
+	/*void statusGravacao() {
+		if(drone == iniciarGravacao()){
+			System.out.println("Gravando");
+		}else
+			System.out.println("Nao gravando");
+		
+	}*/
+	
+}
+{% endhighlight %}
+
+ControleRemoto.java
+{% highlight java %}
+package questao5;
+
+
+public class ControleRemoto {
+	
+	int autonomiaBateria;
+	int alcance;
+	Drone drone;
+	
+	public ControleRemoto() {
+	}
+	
+	public ControleRemoto(int autonomiaBateria, int alcance, Drone drone){
+		
+		this.autonomiaBateria = autonomiaBateria;
+		this.alcance = alcance;
+		this.drone = drone;
+		
+	}
+	
+	int aumentaVelocidadeVertical() {
+	
+		return drone.aumentaVelocidadeHorizontal();
+	
+	}
+	
+	int diminuiVelocidadeVertical() {
+		
+		return drone.diminuiVelocidadeVertical();
+	
+	}
+	
+	int aumentaVelocidadeHorizontal() {
+		
+		return drone.aumentaVelocidadeHorizontal();
+		
+	}
+	
+	int diminuiVelocidadeHorizontal() {
+		
+		return drone.diminuiVelocidadeHorizontal();
+		
+	}
+	
+	void iniciarGravacao() {
+		
+		drone.iniciarGravacao();
+		
+	}
+	
+	void interromperGravacao(){
+		
+		drone.interromperGravacao();
+		
+	}
+
+}
+
+
+{% endhighlight %}
+
+Principal.java
+{% highlight java %}
+package questao5;
+
+import questao5.Drone;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		Drone drone1, drone2, drone3, drone4;
+		ControleRemoto controle1, controle2, controle3, controle4;
+		
+		drone1 = new Drone();
+		drone2 = new Drone();
+		drone3 = new Drone("DJI", "Mavic Pro", 4, "UHD", 16, 16, 27, 13000);
+		drone4 = new Drone("DJI", "Sprediang Wings", 8, "SUHD", 16, 16, 15, 13000);
+		
+		drone1.marca = "Hubsan";
+		drone1.modelo = "X4 mini";
+		drone1.numeroHelices = 4;
+		drone1.camera = "SD";
+		drone1.velocidadeVertical = 10;
+		drone1.velocidadeHorizontal = 10;
+		drone1.autonomiaBateria = 7;
+		drone1.distanciaMaxima = 150;
+		
+		
+		drone2.marca = "Hubsan";
+		drone2.modelo = "H501S X4 FPV";
+		drone2.numeroHelices = 4;
+		drone2.camera = "HD";
+		drone2.velocidadeVertical = 12;
+		drone2.velocidadeHorizontal = 12;
+		drone2.autonomiaBateria = 20;
+		drone2.distanciaMaxima = 1000;
+		
+		controle1 = new ControleRemoto();
+		controle2 = new ControleRemoto();
+		controle3 = new ControleRemoto(80, 10000, drone3);
+		controle4 = new ControleRemoto(90, 20000, drone4);
+		
+		controle1.autonomiaBateria = 60;
+		controle1.alcance = 1000;
+		controle1.drone = drone1;
+		
+		controle2.autonomiaBateria = 70;
+		controle2.alcance = 10000;
+		controle2.drone = drone2;
+		
+		System.out.println("Drone 1");
+		drone1.imprime();
+		System.out.println("Drone 2");
+		drone2.imprime();
+		System.out.println("Drone 3");
+		drone3.imprime();
+		System.out.println("Drone 4");
+		drone4.imprime();
+		
+	}
+
+}
+
+
+
+{% endhighlight %}
+
+
+
+
+
 
 **Questão 6:** Sejam os seguintes códigos da *ClasseA* e da aplicação principal escritas em JAVA. 
 
