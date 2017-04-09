@@ -95,7 +95,111 @@ Drones civis vendidos atualmente possuem, em sua maior parte, as seguintes carac
 
 Além dessas características, drones possuem as seguintes funções básicas: a) aumentar/diminuir velocidade vertical, b) aumentar/diminuir velocidade horizontal, c) iniciar/interromper gravação da câmera e d) diminuir velocidades máxima (horizontal e vertical) em 50% sempre que a autonomia da bateria for menor do que 5 minutos. 
 
-Dado esse cenário, pede-se aos alunos que representem (inicialmente) as características e comportamentos de um drone através de um diagrama de classes e, posteriormente, apresente a implementação dessa classe na linguagem Java. 
+Dado esse cenário, pede-se aos alunos que representem (inicialmente) as características e comportamentos de um drone através de um diagrama de classes e, posteriormente, apresente a implementação dessa classe na linguagem Java.
+
+{% highlight java %}
+package questao3;
+
+public class Drone {
+	
+	String marca;
+	String modelo;
+	int numeroHelices;
+	String camera;
+	int velocidadeVertical;
+	int velocidadeHorizontal;
+	int autonomiaBateria;
+	int distanciaMaxima;
+	
+	Drone() {
+		
+	}
+	
+	Drone(String marca, String modelo, int numeroHelices, String camera, int velocidadeVertical, int velocidadeHorizontal,
+	      int autonomiaBateria, int distanciaMaxima) {
+		
+		this.marca = marca;
+		this.modelo = modelo;
+		this.numeroHelices = numeroHelices;
+		this.camera = camera;
+		this.velocidadeVertical = velocidadeVertical;
+		this.velocidadeHorizontal = velocidadeHorizontal;
+		this.autonomiaBateria = autonomiaBateria;
+		this.distanciaMaxima = distanciaMaxima;
+		
+	}
+	
+void imprime(){
+		
+		System.out.println("Marca: " + marca);
+		System.out.println("Modelo: " + modelo);
+		System.out.println("Numero de helices: " + numeroHelices);
+		System.out.println("Camera: " + camera);
+		System.out.println("Velocidade vertical maxima: " + velocidadeVertical + " m/s");
+		System.out.println("Velocidade Horizontal maxima: " + velocidadeHorizontal + " m/s");
+		System.out.println("Autonomia bateria: " + autonomiaBateria + " minutos");
+		System.out.println("Distancia maxima: " + distanciaMaxima + " metros\n");
+		
+	}
+	
+	int aumentaVelocidaVertical(int aceleracaoVertical) {
+		
+		velocidadeVertical += aceleracaoVertical;
+		return velocidadeVertical;
+	
+	}
+	
+	int diminuiVelocidadeVertical(int desaceleracaoVertical) {
+		
+		velocidadeVertical -= desaceleracaoVertical;
+		return velocidadeVertical;
+	
+	}
+	
+	int aumentaVelocidaHorizontal(int aceleracaoHorizontal) {
+		
+		velocidadeHorizontal += aceleracaoHorizontal;
+		return velocidadeHorizontal;
+		
+	}
+	
+	int diminuiVelocidadeHorizontal(int desaceleracaoHorizontal) {
+		
+		velocidadeHorizontal -= desaceleracaoHorizontal;
+		return velocidadeHorizontal;
+		
+	}
+	
+	int economiaBateriaVertical(int bateria) {
+		
+		velocidadeVertical = velocidadeVertical / 2;
+		return velocidadeVertical;
+		
+	}
+	
+	int economiaBateriaHorizontal(int bateria) {
+		
+		velocidadeHorizontal = velocidadeHorizontal / 2;
+		return velocidadeHorizontal;
+		
+	}
+	
+	void iniciarGravacao() {
+		
+		System.out.println("Gravando\n");
+		
+	}
+	
+	void interromperGravacao(){
+		
+		System.out.println("Gravação interrompida\n");
+		
+	}
+	
+}
+
+
+{% endhighlight %} 
 
 
 **Questão 4:** Considerando a classe definida e implementada na questão 5, pede-se que os seguintes objetos sejam criados a partir do programa principal: 
