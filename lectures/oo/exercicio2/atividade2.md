@@ -215,6 +215,158 @@ void imprime(){
 | Autonomia bateria| 7 minutos      | 20 minutos     | 27 minutos        | 15 minutos        |
 | Distância máxima | até 150 metros | até 1 kilometro| até 13 kilometros | até 13 kilometros |
 
+Questao4.java
+Drone.java
+{% highlight java %}
+package questao4;
+
+public class Drone {
+	
+	String marca;
+	String modelo;
+	int numeroHelices;
+	String camera;
+	int velocidadeVertical;
+	int velocidadeHorizontal;
+	int autonomiaBateria;
+	int distanciaMaxima;
+	
+	Drone() {
+		
+	}
+	
+	Drone(String marca, String modelo, int numeroHelices, String camera, int velocidadeVertical, int velocidadeHorizontal,
+	      int autonomiaBateria, int distanciaMaxima) {
+		
+		this.marca = marca;
+		this.modelo = modelo;
+		this.numeroHelices = numeroHelices;
+		this.camera = camera;
+		this.velocidadeVertical = velocidadeVertical;
+		this.velocidadeHorizontal = velocidadeHorizontal;
+		this.autonomiaBateria = autonomiaBateria;
+		this.distanciaMaxima = distanciaMaxima;
+		
+	}
+	
+	void imprime(){
+		
+		System.out.println("Marca: " + marca);
+		System.out.println("Modelo: " + modelo);
+		System.out.println("Numero de helices: " + numeroHelices);
+		System.out.println("Camera: " + camera);
+		System.out.println("Velocidade vertical maxima: " + velocidadeVertical + " m/s");
+		System.out.println("Velocidade Horizontal maxima: " + velocidadeHorizontal + " m/s");
+		System.out.println("Autonomia bateria: " + autonomiaBateria + " minutos");
+		System.out.println("Distancia maxima: " + distanciaMaxima + " metros\n");
+		
+	}
+	
+	int aumentaVelocidaVertical(int aceleracaoVertical) {
+		
+		velocidadeVertical += aceleracaoVertical;
+		return velocidadeVertical;
+	
+	}
+	
+	int diminuiVelocidadeVertical(int desaceleracaoVertical) {
+		
+		velocidadeVertical -= desaceleracaoVertical;
+		return velocidadeVertical;
+	
+	}
+	
+	int aumentaVelocidaHorizontal(int aceleracaoHorizontal) {
+		
+		velocidadeHorizontal += aceleracaoHorizontal;
+		return velocidadeHorizontal;
+		
+	}
+	
+	int diminuiVelocidadeHorizontal(int desaceleracaoHorizontal) {
+		
+		velocidadeHorizontal -= desaceleracaoHorizontal;
+		return velocidadeHorizontal;
+		
+	}
+	
+	int economiaBateriaVertical(int bateria) {
+		
+		velocidadeVertical = velocidadeVertical / 2;
+		return velocidadeVertical;
+		
+	}
+	
+	int economiaBateriaHorizontal(int bateria) {
+		
+		velocidadeHorizontal = velocidadeHorizontal / 2;
+		return velocidadeHorizontal;
+		
+	}
+	
+	void iniciarGravacao() {
+		
+		System.out.println("Gravando\n");
+		
+	}
+	
+	void interromperGravacao(){
+		
+		System.out.println("Gravação interrompida\n");
+		
+	}	
+}
+
+{% endhighlight %}
+
+Principal.java
+{% highlight java %}
+package questao4;
+
+import questao4.Drone;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+		Drone drone1, drone2, drone3, drone4;
+		drone1 = new Drone();
+		drone2 = new Drone();
+		drone3 = new Drone("DJI", "Mavic Pro", 4, "UHD", 16, 16, 27, 13000);
+		drone4 = new Drone("DJI", "Sprediang Wings", 8, "SUHD", 16, 16, 15, 13000);
+		
+		drone1.marca = "Hubsan";
+		drone1.modelo = "X4 mini";
+		drone1.numeroHelices = 4;
+		drone1.camera = "SD";
+		drone1.velocidadeVertical = 10;
+		drone1.velocidadeHorizontal = 10;
+		drone1.autonomiaBateria = 7;
+		drone1.distanciaMaxima = 150;
+		
+		
+		drone2.marca = "Hubsan";
+		drone2.modelo = "H501S X4 FPV";
+		drone2.numeroHelices = 4;
+		drone2.camera = "HD";
+		drone2.velocidadeVertical = 12;
+		drone2.velocidadeHorizontal = 12;
+		drone2.autonomiaBateria = 20;
+		drone2.distanciaMaxima = 1000;
+		
+		System.out.println("Drone 1");
+		drone1.imprime();
+		System.out.println("Drone 2");
+		drone2.imprime();
+		System.out.println("Drone 3");
+		drone3.imprime();
+		System.out.println("Drone 4");
+		drone4.imprime();
+		
+	}
+}
+{% endhighlight %}
+
 
 **Questão 5:** Ainda levando em consideração o cenário descrito nas questões 3 e 4, é necessário fazer com que os comandos realizados pelo usuário no controle remoto sejam enviados ao drone. Para isso, é necessário que o controle remoto estabeleça uma conexão com o drone. A partir desse momento é possível enviar os seguintes comandos ao drone: a) aumentar ou diminuir a velocidade vertical em passos de 1 m/s; b) aumentar ou diminuir a velocidade horizontal em passos de 1m/s e, c) ativar ou desativar a câmera. É importante ressaltar que um controle remoto só pode estar conectado a um drone apenas. Por fim, controles remotos possuem baterias com autonomia entre 60 e 90 minutos e alcance entre 20 metros e 20 kilometros.  
 
