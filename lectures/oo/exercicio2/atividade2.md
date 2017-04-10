@@ -756,6 +756,40 @@ carga Horaria: 240
 
 **Questão 9:**
 
+{% highlight java%}
+package questao9;
+public class Principal {
+    public static void main(String[] args) {
+        Curso c1, c2;
+        Aluno a1, a2, a3;
+        
+        c2 = new Curso(2, "Engenharia Eletrônica", 257);
+        
+        a1 = new Aluno("Andre", c1, 13, 23, 02, 1983);
+        a2 = new Aluno("Maria", c2, 5, 27, 5, 1994);
+        
+        Curso.obterDetalhes(); ERRO //esta chamando a função da classe e nao do objeto intanciado
+        c2.matricula = 20; ERRO // matricula eh um atributo de Aluno
+        Curso.nome = "Ciência da computação"; ERRO //esta chamando a função da classe e nao do objeto intanciado
+        c1.codigo = 21;
+        Aluno.obterDetalhes(); ERRO //esta chamando a função da classe e nao do objeto intanciado
+        a3.cargaHoraria() = 220; ERRO // cargaHoraria eh um atributo de Curso
+    }
+}
+{% endhighlight %}
+
+{% highlight java%}
+exemplo de solucao:
+
+c1.obterDetalhes();
+    a1.matricula = 20; 
+    c1.nome = "Ciência da computação";
+    c1.codigo = 21;
+    c2.obterDetalhes();
+    c1.cargaHoraria() = 220;
+{% endhighlight %}
+
+
 
 **Questão 10:**
 
