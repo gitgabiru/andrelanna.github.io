@@ -202,6 +202,31 @@ void imprime(){
 {% endhighlight %} 
 
 
+Drone.Uml
+
+**************************************
+*           	Drone                *
+**************************************
+*-marca: String                      *
+*-modelo: String                     *
+*-numeroHelices: int                 *
+*-camera: String                     * 
+*-velocidadeVertical: int            *
+*-velocidadeHorizontal: int          *
+*-autonomiaBateria: int              *
+*-distanciamaxima: int               *
+**************************************
+*+imprime(): void                    *
+*+aumentaVelocidadeVertical(): int   *
+*+diminuivelocidadeVertical(): int   *
+*+aumentaVelocidadeHorizontal(): int *
+*+diminuiVelocidadeHorizontal(): int *
+*+economiaBateriaHorizontal(): int   *
+*+economiaBateriaVertical(): int     *
+*+iniciarGravacao(): void            *
+*+interromperGravacao(): void        *
+**************************************
+
 **Questão 4:** Considerando a classe definida e implementada na questão 5, pede-se que os seguintes objetos sejam criados a partir do programa principal: 
 
 | Característica   | drone1         | drone2         | drone3            | drone4            |
