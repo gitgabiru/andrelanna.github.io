@@ -721,6 +721,38 @@ True
 
 **Questão 8:**
 
+Os seguintes objetos foram finalizados:
+
+Objeto referenciado inicialmente por “c2”
+Nome do curso: Engenharia Eletrônica
+Código: 2
+carga Horaria: 257
+
+Objeto referenciado inicialmente por “a2”
+Nome: Maria
+Curso: c2
+matricula: 27
+data de nascimento: 27/05/1994
+
+Objeto referenciado inicialmente por “a3”
+Nome: Junior
+Curso: c1
+Matricula: 70
+data de nascimento:16/11/1995
+
+Restando os seguintes objetos:
+
+Objeto referenciado inicialmente por “a1”
+Nome: Andre
+Curso: c1
+Matricula: 13
+data de nascimento:23/02/1983
+
+Objeto referenciado inicialmente por “c1”
+Nome do curso: Engenharia de Software
+Código: 1
+carga Horaria: 240
+
 
 **Questão 9:**
 
