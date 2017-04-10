@@ -699,6 +699,25 @@ System.out.println(q3 == q2);
 
 **Questão 7:**
 
+//O programa irá imprimir os “obterDetalhes()” de a1,
+Nome: Andre
+Curso: c1
+Data de nascimento: 23/02/1983
+
+//“obterDetalhes()” de a2,
+Nome: Maria
+Curso: c2
+Data de nascimento:27/5/1994
+
+“obterDetalhes()” de a3,
+Nome: Junior
+Curso: c1
+Data de nascimento: 16/11/1995
+
+False
+False
+True
+
 
 **Questão 8:**
 
