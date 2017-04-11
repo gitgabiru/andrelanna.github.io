@@ -6,6 +6,8 @@ layout: default
 ### UnB - Universidade de Brasilia
 ### FGA - Faculdade do Gama
 ### OO - Orientação por objetos
+### Dupla: Gabriel Alves   15/0009917    
+###      : Iago Neres      15/0011831
 ------
 
 Atividade para realizar em dupla e entregar via GitHub. Uma entrega por dupla.
@@ -848,6 +850,39 @@ public class Turma {
 
 }
 {% endhighlight %}
+
+B)
+Principal.java
+{% highlight java%}
+package questao10;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Turma oo, das;
+		
+		oo = new Turma();
+		das = new Turma();
+		
+		oo.vagasLivre = 46;
+		oo.gradeHoraria = "4as e 6as feiras, das 12:00 às 16:00 horas";
+		
+		das.vagasLivre = 30;
+		das.gradeHoraria = "4as. e 6as. feiras, das 16:00 às 18:00 horas";
+		
+		System.out.println("Orientação a Objetos: ");
+		System.out.println("Vagas livres: " + oo.vagasLivre);
+		System.out.println("Grade Horaria: " + oo.gradeHoraria);
+		
+		System.out.println("Desenvolvimento Avançado de Software: ");
+		System.out.println("Vagas livres: " + das.vagasLivre);
+		System.out.println("Grade Horaria: " + das.gradeHoraria);
+
+	}
+
+}
+{% endhighlight %}
+
 
 
 ## Referências:
