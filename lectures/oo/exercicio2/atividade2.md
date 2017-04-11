@@ -684,7 +684,7 @@ Responda as seguintes questões com base nos códigos acima:
 
 a) As referências a1 e a2 para objetos de *ClasseA* são iguais?
 
-	As referências a1 e a2 são diferentes, pois duas ou mais referências podem até apontar para o mesmo objeto, mas são diferentes.
+	As referências a1 e a2 são diferentes, pois duas ou mais referências podem ser provenientes da mesma classe e instanciar objetos da mesma classe, mas seus endereços são diferentes.
 
 b) Qual o estado de cada dos objetos de cada referência? 
 
@@ -728,12 +728,12 @@ System.out.println(q3 == q2);
 
 **Questão 7:**
 
-//O programa irá imprimir os “obterDetalhes()” de a1,
+O programa irá imprimir os “obterDetalhes()” de a1,
 Nome: Andre
 Curso: c1
 Data de nascimento: 23/02/1983
 
-//“obterDetalhes()” de a2,
+“obterDetalhes()” de a2,
 Nome: Maria
 Curso: c2
 Data de nascimento:27/5/1994
@@ -821,6 +821,33 @@ c1.obterDetalhes();
 
 
 **Questão 10:**
+a)
+
+Turma.java
+{% highlight java%}
+package questao10;
+
+public class Turma {
+	
+	int codigoTurma;
+	int totalVagas;
+	int vagasLivre;
+	int vagasOcupadas;
+	String gradeHoraria;
+	
+	void matricula(){
+		
+		if(vagasLivre >= 1 ){
+			System.out.println("Pode matricular");
+			vagasLivre -= 1;
+			System.out.println("Numero de vagas disponiveis: " + vagasLivre);
+		}else{
+			System.out.println("Turma lotada");
+		}
+	}
+
+}
+{% endhighlight %}
 
 
 ## Referências:
