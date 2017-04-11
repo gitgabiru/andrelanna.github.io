@@ -684,7 +684,28 @@ Responda as seguintes questões com base nos códigos acima:
 
 a) As referências a1 e a2 para objetos de *ClasseA* são iguais?
 
+	As referências a1 e a2 são diferentes, pois duas ou mais referências podem até apontar para o mesmo objeto, mas são diferentes.
+
 b) Qual o estado de cada dos objetos de cada referência? 
+
+	Objeto q1:
+	    	a1 = 0
+	    	a2 = 0.0
+	    	a3 = null
+		a4 = false
+
+	Objeto q2:
+		a1 = 0
+		a2 = 0.0
+		a3 = null
+		a4 = false
+
+	Objeto q3:
+		a1 = 1
+		a2 = 1.0
+		a3 = null (uma String escrita “null”)
+		a4 = false
+
 
 c) O que será impresso pela função *main* da classe *Principal* se a linha número *11* for igual a: 
 {% highlight java%}
@@ -695,6 +716,14 @@ System.out.println(q1.a2 == q2.a2);
 System.out.println(q1.a4 == q3.a4);
 System.out.println(q3 == q2);
 {% endhighlight %}
+
+    False
+    True
+    False
+    True
+    True
+    False
+
 
 
 **Questão 7:**
