@@ -921,6 +921,57 @@ public class Principal {
 
 {% endhighlight %}
 
+D)
+
+Principal.java
+{% highlight java%}
+package questao10;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Turma oo, das;
+		
+		oo = new Turma();
+		das = new Turma();
+		
+		oo.vagasLivre = 46;
+		oo.gradeHoraria = "4as e 6as feiras, das 12:00 às 16:00 horas";
+		
+		das.vagasLivre = 30;
+		das.gradeHoraria = "4as. e 6as. feiras, das 16:00 às 18:00 horas";
+		
+		System.out.println("Orientação a Objetos: ");
+		System.out.println("Vagas livres: " + oo.vagasLivre);
+		System.out.println("Grade Horaria: " + oo.gradeHoraria);
+		
+		System.out.println("Desenvolvimento Avançado de Software: ");
+		System.out.println("Vagas livres: " + das.vagasLivre);
+		System.out.println("Grade Horaria: " + das.gradeHoraria);
+		
+		Curso curso;
+		curso = new Curso(0 ,"Engenharia de Software",0 );
+		
+		Aluno a1,a2,a3;
+		
+		a1 = new Aluno();
+		a2 = new Aluno();
+		a3 = new Aluno();
+		
+		a1.nome = "Andre";
+		a2.nome = "Maria";
+		a3.nome = "Junior";
+		
+		oo.matricula(1);
+		
+		
+		
+
+	}
+
+}
+
+{% endhighlight %}
 
 
 
